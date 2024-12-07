@@ -59,12 +59,12 @@ const UserList = () => {
     <div className="p-8 bg-[#e0f7fa] min-h-screen text-[#000000]">
       <div className="flex justify-between items-center mb-6">
         {/* Add User Button on the Left */}
-        <button
-            className="bg-[#80cbc4] hover:bg-[#4db6ac] text-[#004d40] font-semibold px-5 py-2 rounded-lg transition-transform transform hover:scale-105 shadow-md"
-            onClick={() => setSelectedUser({ createdAt: new Date().toISOString() })}
-            >
-            + Add User
-        </button>
+       <button
+  className="bg-[#80cbc4] hover:bg-[#4db6ac] text-[#004d40] font-semibold px-5 py-2 rounded-lg transition-transform transform hover:scale-105 shadow-md"
+  onClick={() => setSelectedUser({ createdAt: new Date().toISOString() })}
+>
+  + Add User
+</button>
 
 
         {/* Title Centered */}

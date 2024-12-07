@@ -3,12 +3,12 @@ import { addUser, updateUser, fetchRoles } from '../services/api';
 
 const UserForm = ({ user, onClose, onRefresh }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    role: '',
-    active: true,
-    createdAt: '',
-    password: ''  // Add password to formData
+    name: user?.name ?? '',
+    email: user?.email ?? '',
+    role: user?.role ?? '',
+    active: user?.active ?? true,
+    createdAt: user?.createdAt ?? new Date().toISOString(),
+    password: '', // Always initialize password to an empty string
   });
   const [roles, setRoles] = useState([]);
   const [error, setError] = useState('');
@@ -24,19 +24,16 @@ const UserForm = ({ user, onClose, onRefresh }) => {
     };
 
     loadRoles();
-
-    if (user) {
-      setFormData(user);
-    } else {
-      // Initialize createdAt with the current date and time when adding a new user
-      setFormData((prev) => ({ ...prev, createdAt: new Date().toISOString() }));
-    }
-  }, [user]);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
     setError('');
+  };
+
+  const handleCheckboxChange = (e) => {
+    setFormData({ ...formData, active: e.target.checked });
   };
 
   const validateEmail = (email) => {
@@ -61,15 +58,9 @@ const UserForm = ({ user, onClose, onRefresh }) => {
       return;
     }
 
-    // Check if password is entered when adding a new user
-    if (!formData.password && !user) {
-      setError('Please enter a password.');
-      return;
-    }
-
     try {
       if (user && user.id) {
-        await updateUser(formData);
+        await updateUser({ ...formData, password: formData.password || undefined });
       } else {
         await addUser(formData);
       }
@@ -77,6 +68,7 @@ const UserForm = ({ user, onClose, onRefresh }) => {
       onClose();
     } catch (error) {
       console.error('Error saving user:', error);
+      setError('Failed to save user. Please try again.');
     }
   };
 
@@ -111,28 +103,25 @@ const UserForm = ({ user, onClose, onRefresh }) => {
             required
             className="border border-gray-300 text-black p-2 mb-3 w-full rounded-md"
           />
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              placeholder="Password"
-              required={!user}  // Require password when adding a new user
-              className="border border-gray-300 text-black p-2 mb-3 w-full rounded-md"
-            />
-
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Password"
+            className="border border-gray-300 text-black p-2 mb-3 w-full rounded-md"
+          />
           <label className="flex items-center mb-4 text-[#004d40] font-medium">
             Active:
             <input
               type="checkbox"
               name="active"
               checked={formData.active}
-              onChange={(e) => setFormData({ ...formData, active: e.target.checked })}
+              onChange={handleCheckboxChange}
               className="ml-2"
             />
           </label>
 
-          {/* Display Created At field if it exists */}
           {formData.createdAt && (
             <p className="mb-4 text-sm text-[#004d40]">
               Created At: <span className="font-medium">{new Date(formData.createdAt).toLocaleString()}</span>

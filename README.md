@@ -20,7 +20,7 @@ A simple Role-Based Access Control (RBAC) dashboard built with React and Vite. T
 ### Installation
 
 1. Clone the repository:
-   git clone https://github.com/Sparkashok/VRV-INTERNWORK.git
+   git clone https://github.com/Sparkashok/RBAC.git
 
 2. Navigate to the project directory:
    cd VRV-WEB

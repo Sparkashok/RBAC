@@ -6,7 +6,7 @@
       "name": "Abhiram",
       "email": "Abhiram@gmail.com",
       "role": "Admin",
-      "password": ""
+      "password": "123456789"
     },
     {
       "id": "3dd7",
@@ -14,7 +14,7 @@
       "name": "Ashok kumar",
       "email": "chinnintiashok555@gmail.com",
       "role": "User",
-      "password": "12345",
+      "password": "123456",
       "active": true
     },
     {
