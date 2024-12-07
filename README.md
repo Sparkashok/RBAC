@@ -48,11 +48,18 @@ A simple Role-Based Access Control (RBAC) dashboard built with React and Vite. T
   - Update existing user information, such as roles or contact details.  
   - View and manage all users and their roles.  
   - Handle pending requests (e.g., approvals or account activations).
+  - Admin can manage all the access such as update,delete,create etc..
+  - Admin can edit the details or information of the any user.
 
 - **User Login**:  
   Regular users can log in to:  
   - View their profile information.  
   - Change their password from the "Change Password" section for enhanced security.
+ 
+    **
+       if the login form is in hrfrom then only hr can access the dashboard by entering the credentials these credentials are validated using the authentication method which all the credentials are stored in the json web server of PORT number '5000'.
+    - JSON server will run on the PORT number 5000.
+   - In this port or the localhost the total information of the users and the admin will be there.
 
 - **Dashboard Overview**:  
   The dashboard provides an at-a-glance overview with key statistics:  
