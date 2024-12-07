@@ -1,0 +1,85 @@
+{
+  "users": [
+    {
+      "id": "ccb2",
+      "createdAt": "2024-12-07T11:33:40.969Z",
+      "name": "Abhiram",
+      "email": "Abhiram@gmail.com",
+      "role": "Admin",
+      "password": ""
+    },
+    {
+      "id": "3dd7",
+      "createdAt": "2024-12-07T12:45:37.906Z",
+      "name": "Ashok kumar",
+      "email": "chinnintiashok555@gmail.com",
+      "role": "User",
+      "password": "12345",
+      "active": true
+    },
+    {
+      "id": "fe18",
+      "createdAt": "2024-12-07T13:17:45.369Z",
+      "name": "jk",
+      "email": "jayakrishna_meravala@srmap.edu.in",
+      "role": "User",
+      "password": "12345678",
+      "active": true
+    },
+    {
+      "id": "a09a",
+      "createdAt": "2024-12-07T13:18:04.450Z",
+      "name": "nikhil",
+      "email": "nikhilsandeep_bandla@srmap.edu.in",
+      "role": "User",
+      "password": "1234567",
+      "active": false
+    },
+    {
+      "id": "5742",
+      "createdAt": "2024-12-07T13:18:28.880Z",
+      "name": "raju",
+      "email": "rajasekhar_b@srmap.edu.in",
+      "role": "Admin",
+      "password": "12345",
+      "active": true
+    },
+    {
+      "id": "c492",
+      "createdAt": "2024-12-07T13:45:53.473Z",
+      "name": "Ashxxxzz13",
+      "email": "ashokkumar_c@srmap.edu.in",
+      "role": "HR",
+      "password": "1234567890",
+      "active": true
+    }
+  ],
+  "roles": [
+    {
+      "id": "7dbc",
+      "permissions": [
+        "Read",
+        "Write",
+        "Delete"
+      ],
+      "name": "Admin"
+    },
+    {
+      "id": "ff7f",
+      "permissions": [
+        "Read"
+      ],
+      "name": "User"
+    },
+    {
+      "id": "HR_Role",
+      "permissions": [
+        "Read",
+        "Write",
+        "Delete",
+        "Manage"
+      ],
+      "name": "HR"
+    }
+  ]
+}
