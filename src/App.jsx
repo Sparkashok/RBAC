@@ -4,7 +4,7 @@ import UserList from './Components/UserList';
 import UserDashboard from './Components/UserDashboard';
 import Navbar from './Components/Navbar';
 import UserNavbar from './Components/UserNavbar';
-import Dashboard from './components/Dashboard';
+import Dashboard from './Components/Dashboard';
 import LoginForm from './Components/LoginForm';
 
 const App = () => {
