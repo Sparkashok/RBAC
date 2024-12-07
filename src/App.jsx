@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import UserList from './components/UserList';
+import UserList from './Components/UserList';
 import UserDashboard from './Components/UserDashboard';
 import Navbar from './Components/Navbar';
 import UserNavbar from './Components/UserNavbar';
